@@ -1,0 +1,43 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Cypress output
+cypress/videos/
+cypress/screenshots/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# VS Code settings
+.vscode/
+
+# Optional build folders
+dist/
+build/
+
+# Log files
+*.log
+
+# Coverage
+coverage/
+
+# Trash
+.Trashes
+
+# Other system files
+Icon?
+._*
+.Spotlight-V100
+.TemporaryItems
