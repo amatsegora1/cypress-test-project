@@ -21,7 +21,7 @@ describe('Garage and Fuel Expenses tests', () => {
         Garage.getExpenseTotalCost().type('150').blur();
         Garage.getAddExpenseButtonPopup().click();
         cy.get('table.expenses_table tbody tr').first().within(() => {
-            cy.get('td').eq(0).should('contain.text', '27.04.2025'); // date
+            cy.get('td').eq(0).should('contain.text', Garage.formatDateForUi(new Date())); // date
             cy.get('td').eq(1).should('contain.text', '101'); // milage
             cy.get('td').eq(2).should('contain.text', '10L'); // L
             cy.get('td').eq(3).should('contain.text', '150.00 USD'); // Cost
