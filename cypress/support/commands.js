@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //Custom command for login
 Cypress.Commands.add('login', (email, password) => {
-    cy.visit('https://guest:welcome2qauto@qauto.forstudy.space/login'); 
+    cy.visit('/'); 
     cy.contains('button', 'Sign In').click();
     cy.get('#signinEmail').type(email);
     cy.get('#signinPassword').type(password, { sensitive: true });
