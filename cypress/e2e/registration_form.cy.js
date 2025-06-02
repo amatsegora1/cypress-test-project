@@ -1,4 +1,5 @@
 import RegistrationForm from '../pages/registration';
+import { RegistrationForm } from '../pages/RegistrationForm';
 
 describe('Registration form tests', () => {
     beforeEach(function () {
