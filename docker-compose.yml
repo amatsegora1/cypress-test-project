@@ -1,0 +1,10 @@
+services:
+  cypress:
+    platform: linux/amd64   # ← переміщено сюди!
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/e2e
+    command: npx cypress run --browser firefox --spec "cypress/e2e/spec.cy.js"
+    tty: true
