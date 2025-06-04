@@ -1,0 +1,28 @@
+name: Run Cypress in Docker (spec only)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: docker build --platform linux/amd64 -t cypress-tests .
+
+      - name: Run Cypress spec in Docker
+        run: >
+          docker run --platform linux/amd64
+          -v ${{ github.workspace }}:/e2e
+          cypress-tests
+          npx cypress run --browser firefox --spec "cypress/e2e/spec.cy.js"
