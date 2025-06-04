@@ -10,4 +10,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["npx", "cypress", "run", "--browser", "firefox"]
+CMD ["npx", "cypress", "run", "--browser", "firefox", "--spec", "cypress/e2e/spec.cy.js"]

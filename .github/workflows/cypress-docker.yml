@@ -21,8 +21,4 @@ jobs:
         run: docker build --platform linux/amd64 -t cypress-tests .
 
       - name: Run Cypress spec in Docker
-        run: >
-          docker run --platform linux/amd64
-          -v ${{ github.workspace }}:/e2e
-          cypress-tests
-          npx cypress run --browser firefox --spec "cypress/e2e/spec.cy.js"
+        run: docker run --platform linux/amd64 cypress-tests
