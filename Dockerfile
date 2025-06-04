@@ -1,4 +1,4 @@
-FROM cypress/included:10.11.0
+FROM cypress/included:14.3.0
 
 RUN apt-get update && apt-get install -y firefox-esr
 
